@@ -1,0 +1,369 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0a2a;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header and Footer */
+.header, .footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+/* Main content area */
+.solar-system-overview, .planets, .moons, .solar-system-objects {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Solar System Overview */
+.solar-system-overview {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Planets Section */
+.planets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.planet {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.planet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.planet::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.planet:hover::before {
+    opacity: 1;
+}
+
+/* Planet-specific styles */
+.mercury { border: 2px solid #8c7853; }
+.venus { border: 2px solid #ffa500; }
+.earth { border: 2px solid #4169e1; }
+.mars { border: 2px solid #b22222; }
+.jupiter { border: 2px solid #deb887; }
+.saturn { border: 2px solid #ffd700; }
+.uranus { border: 2px solid #40e0d0; }
+.neptune { border: 2px solid #4169e1; }
+
+/* Moons Section */
+.moons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.moon {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.moon:hover {
+    transform: scale(1.05);
+}
+
+/* Other Solar System Objects */
+.solar-system-objects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.asteroid-belt, .comets, .kuiper-belt {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.asteroid-belt:hover, .comets:hover, .kuiper-belt:hover {
+    transform: translateY(-5px);
+}
+
+/* Lists within articles */
+.planet ul, .moon ul, .asteroid-belt ul, .comets ul, .kuiper-belt ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.planet li, .moon li, .asteroid-belt li, .comets li, .kuiper-belt li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.planet li::before, .moon li::before, .asteroid-belt li::before, .comets li::before, .kuiper-belt li::before {
+    content: '•';
+    color: #ffd700;
+    position: absolute;
+    left: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #0a0a2a;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffd700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Quiz Styles */
+#planet-quiz {
+    margin-top: 20px;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.quiz-option.correct {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.quiz-option.incorrect {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Fun Fact Styles */
+#fun-fact {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Search Input Styles */
+.search-input {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 16px;
+}
+
+.search-input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+/* Fact Box Styles */
+.fact-box {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255,215,0,0.3);
+}
+
+.fact-box h3 {
+    margin-top: 0;
+}
+
+#new-fact {
+    background-color: #ffd700;
+    color: #0a0a2a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#new-fact:hover {
+    background-color: #ffec8b;
+}
+
+/* Scale Comparison Styles */
+#scale-comparison-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #0a0a2a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#scale-comparison-btn:hover {
+    background-color: #ffec8b;
+}
+
+#scale-comparison {
+    text-align: center;
+}
+
+.planet-scales {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 150px;
+    margin: 20px 0;
+}
+
+.planet-scale {
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.planet-scale.mercury { background-color: #8c7853; }
+.planet-scale.venus { background-color: #ffa500; }
+.planet-scale.earth { background-color: #4169e1; }
+.planet-scale.mars { background-color: #b22222; }
+.planet-scale.jupiter { background-color: #deb887; }
+.planet-scale.saturn { background-color: #ffd700; }
+.planet-scale.uranus { background-color: #40e0d0; }
+.planet-scale.neptune { background-color: #4169e1; }
+
+/* Active Planet Style */
+.planet.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .planets, .solar-system-objects {
+        grid-template-columns: 1fr;
+    }
+
+    .moon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    .planet-scales {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    
+    .planet-scale {
+        margin: 5px;
+    }
+}
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .planet, .moon, .asteroid-belt, .comets, .kuiper-belt {
+        transition: none;
+    }
+}
