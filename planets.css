@@ -1,56 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap'); 
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
+.menu {
+  width: 100%;
+  background-color: #4527a0; /* Ajustement de la couleur pour un ton plus subtil */
+  padding: 15px 0; /* Augmenter légèrement le padding pour un espace plus confortable */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre pour un effet flottant */
 }
-body{background-color : black;
-font-family: 'Zen Dots', cursive;
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
-h1,h2{color: white;
-text-align: center;
-margin-top : 20px;
-font-size : 50px}
-div{display: flex;
-justify-content:center}
-p{color:white;
-font-family: 'Montserrat', sans-serif;
-margin : 20px}
-.text {color : #c3bef8;
+
+.menu li {
+  margin: 0 25px; /* Augmenter légèrement l'espacement entre les éléments */
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px; /* Augmenter légèrement le padding pour un meilleur clic */
+  border-radius: 5px; /* Ajouter un arrondi par défaut */
+  transition: background-color 0.3s, transform 0.2s; /* Ajout d'une transition d'effet */
+}
+
+.menu a:hover {
+  background-color: #673ab7; /* Teinte ajustée pour l'effet hover */
+  transform: scale(1.05); /* Ajout d'un léger zoom au survol */
+}
+
+body {
+  background-color: #121212; /* Ton noir légèrement adouci */
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 48px; /* Légère réduction de la taille pour un rendu plus équilibré */
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px;
+  line-height: 1.6; /* Ajout d'un espacement de ligne pour une meilleure lisibilité */
+}
+
+.text {
+  color: #c3bef8;
   text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-h3{font-size : 15px;
-  color : white;
-font-family : 'Zen Dots'}
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+h3 {
+  font-size: 18px; /* Augmenté légèrement pour plus de lisibilité */
+  color: white;
+  font-family: 'Zen Dots';
+}
+
 img {
   display: block;
   width: 80%;
-  margin: auto;
+  margin: 20px auto; /* Ajout de marge pour une meilleure séparation */
+  border-radius: 10px; /* Ajout d'un léger arrondi aux images */
 }
-.text1{color : #7797d6 ;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text2{color : #ad864d ;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text3{color : #c8c7c6 ;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text4{color : #da8739 ;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text5{color : #a2796e ;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text6{color : #bbb48a;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text7{color : #afd6da;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
-.text8{color : #3a54cc;text-align: left;
-font-size : 15px;
-font-family: 'Montserrat', sans-serif}
+
+.text1 {
+  color: #7797d6;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text2 {
+  color: #ad864d;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text3 {
+  color: #c8c7c6;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text4 {
+  color: #da8739;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text5 {
+  color: #a2796e;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text6 {
+  color: #bbb48a;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text7 {
+  color: #afd6da;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text8 {
+  color: #3a54cc;
+  text-align: left;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
