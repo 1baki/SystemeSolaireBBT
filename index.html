@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Webpage Design</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
+    <script src="index.js" defer=""></script>
 </head>
-<body>
-
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <ion-icon name="planet-outline"></ion-icon> 
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="Planets.html">PLANETS</a></li>
-                    <li><a href="quiz.html">QUIZ</a></li>
-                    <li><a href="SignIn.html">Sign In</a></li>
-                </ul>
-            </div>
-        </div> 
-        <div class="content">
-            <h1>Systeme<span>Solaire</span></h1>
-            <p class="par">Le système solaire est composé du Soleil et de tous les objets célestes qui gravitent autour de lui, 
-                <br>y compris les planètes, les lunes, les astéroïdes, et les comètes. <br> 
-            Il s'étend sur une vaste région de l'espace et est situé dans la galaxie de la Voie lactée. <br> 
-            Les planètes du système solaire incluent:
-             <br>Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus, et Neptune.</p>
+    <body class="opening hide-UI view-2D zoom-large data-close controls-close">
+        <nav class="menu" >
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Planets.html">Planets</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="SignIn.html">Sing in</a></li>    
+            </ul>
+        </nav> 
+        <section class="introduction" >
+          <h2>Welcome to Our Solar System Website</h2>
+          <p>Explore the wonders of our solar system, Learn about the planets, their orbits, and other fascinating details about our cosmic neighborhood.</p>
+      </section>
+        <div class="scale-stretched">
+          <div id="galaxy">
+            <div id="solar-system" class="earth">
+              <div id="mercury" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Mercury</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
                 </div>
+              </div>
+              <div id="venus" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Venus</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="earth" class="orbit">
+                <div class="pos">
+                  <div class="orbit">
+                    <div class="pos">
+                      <div class="moon"></div>
                     </div>
+                  </div>
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Earth</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
                 </div>
+              </div>
+              <div id="mars" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Mars</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="jupiter" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Jupiter</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="saturn" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <div class="ring"></div>
+                    <dl class="infos">
+                      <dt>Saturn</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="uranus" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Uranus</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="neptune" class="orbit">
+                <div class="pos">
+                  <div class="planet">
+                    <dl class="infos">
+                      <dt>Neptune</dt>
+                      <dd><span></span></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div id="sun">
+                <dl class="infos">
+                  <dt>Sun</dt>
+                  <dd><span></span></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <scritp src="index.js"></scritp>
-</body>
+      </body>
 </html>
